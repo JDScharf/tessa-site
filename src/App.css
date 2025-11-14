@@ -14,12 +14,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #4A5759;
   min-height: 50px;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
-  color: white;
+  color: #F7E1D7;
 }
 
 .App-link {
@@ -50,8 +50,8 @@
 
 /* Navigation */
 .navbar {
-  background-color: #374151;
-  color: white;
+  background-color: #4A5759;
+  color: #F7E1D7;
 }
 
 .nav-content {
@@ -79,7 +79,7 @@
 }
 
 .cta-button {
-  background-color: #fbb6ce;
+  background-color: #EDAFB8;
   color: #2d3748;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
