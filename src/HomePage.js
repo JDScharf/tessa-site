@@ -12,13 +12,13 @@ export default function SlaveryAbolitionPage() {
             {/* Plantation Image */}
             <div className="image-card">
               <img
-                src="images/west_india_cutting_canes.png"
+                src="images/west_india_cutting_canes.jpg"
                 alt="Historic plantation scene"
               />
             </div>
 
             {/* Right Column Text */}
-            <div>
+            <div className="left-text">
               <p>
                 Slavery in the age of abolition highlights the realities of
                 slavery in some of the last Caribbean islands to be acquired by
@@ -55,7 +55,7 @@ export default function SlaveryAbolitionPage() {
 
           <div className="content-grid">
             {/* Left Column Text */}
-            <div>
+            <div className="left-text">
               <p>
                 Great Britain acquired the former Spanish colony of Trinidad at
                 the 1803 Peace of Amiens, and the former French colony of St.
@@ -84,7 +84,7 @@ export default function SlaveryAbolitionPage() {
             <div className="image-card">
               <div className="map-container">
                 <img
-                  src="/images/test_map.png"
+                  src="/images/test_map.jpg"
                   alt="Historic plantation scene"
                 />
               </div>
@@ -94,32 +94,32 @@ export default function SlaveryAbolitionPage() {
       </section>
 
       {/* Second Section */}
-      <section className="documents-section">
+      <section className="registry-section">
         <div className="container">
-          <h2 className="section-title">Handwritten Registries</h2>
+          <h2>Source Material</h2>
 
           <div className="registry-grid">
               <img
                 src="images/registry_1.jpg"
-                alt="Aged book cover"
-                className="document-image"
+                alt="An old book that is closed from the top."
+                className="registry-image"
               />
 
               <img
                 src="images/registry_2.jpg"
-                alt="Historical handwritten document"
-                className="document-image"
+                alt="An old book that is open from the top."
+                className="registry-image"
               />
 
               <img
                 src="images/registry_3.jpg"
-                alt="Stack of old books"
+                alt="An old book that is closed from the side."
                 max-width="100%"
-                className="document-image"
+                className="registry-image"
               />
           </div>
 
-          <div className="centered-text">
+          <div className="left-text">
             <p>
 Handwritten registries, copies of which are now held in the T71 series of the National Archives 
 of the United Kingdom (TNA), yield detailed information about every individual enslaved in 
