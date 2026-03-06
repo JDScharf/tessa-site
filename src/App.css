@@ -37,28 +37,31 @@
 .page-container {
   min-height: 100vh;
   /* background-color: #f9fafb; */
-    background-color: #e5e7eb;
+  background-color: #e5e7eb;
 }
 
 /* Navigation */
 .navbar {
-  background-color: #4A5759;
-  color: #F7E1D7;
+  padding-top: 3%;
+  background-color: #4a5759;
+  color: #f7e1d7;
 }
 
 .nav-content {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3rem;
+  min-height: 3rem;  /* changed from height to min-height */
+  flex-wrap: wrap;   /* allows drawer to wrap below */
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .nav-link {
@@ -71,8 +74,8 @@
 }
 
 .cta-button {
-  background-color: #EDAFB8;
-  color: #0D1B2A;
+  background-color: #edafb8;
+  color: #0d1b2a;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
   border: none;
@@ -90,7 +93,7 @@
 }
 
 .registry-section {
-  background-color: #B0C4B1;
+  background-color: #b0c4b1;
   padding: 1rem 1rem 2rem 1rem;
 }
 
@@ -140,7 +143,8 @@
   margin-bottom: 1rem;
 }
 
-.home-top-text, .home-bottom-text {
+.home-top-text,
+.home-bottom-text, .left-text {
   text-align: left;
   align-self: center;
 }
@@ -161,7 +165,7 @@
 
 /* Footer */
 .footer {
-  background-color: #4A5759;
+  background-color: #4a5759;
   color: white;
   padding: 2rem 0;
 }
@@ -224,35 +228,36 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .content-grid {
+  .content-grid, .registry-grid {
     grid-template-columns: 1fr;
-
   }
+
+
 
   .home-bottom-text {
     order: 3;
   }
-  
+
   .documents-grid {
     grid-template-columns: 1fr;
     display: grid;
   }
-  
+
   .nav-links {
     gap: 1rem;
   }
-  
+
   .main-title {
     font-size: 2rem;
   }
 
   .registry-section {
     background-color: #e5e7eb;
-}
+  }
 
-.home-title-div {
- background-color: #B0C4B1;
-}
+  .home-title-div {
+    background-color: #b0c4b1;
+  }
 }
 
 /* Fonts */
@@ -292,7 +297,7 @@ h2 {
   font-family: "Amiri", serif;
   font-weight: 500;
   font-style: normal;
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .amiri-bold {
@@ -331,5 +336,104 @@ button {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-    font-style: normal;
+  font-style: normal;
+}
+
+/* ── Desktop: links laid out in a row ─────────────────────── */
+
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Desktop CTA visible, mobile CTA hidden */
+.desktop-cta {
+  display: block;
+}
+.mobile-cta {
+  display: none;
+}
+
+/* ── Hamburger button ─────────────────────────────────────── */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+  color: #edafb8; 
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate the three lines into an × when open */
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ── Mobile breakpoint ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+ /* Let the navbar stack vertically so the drawer can sit below */
+  .nav-content {
+    flex-wrap: wrap;
+  }
+
+  /* Slide-down drawer */
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background-color: #4a5759;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+
+  .nav-links.nav-open {
+    max-height: 400px; /* large enough to fit all links */
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-link {
+    padding: 0.6rem 0;
+    width: 100%;
+  }
+
+  /* Show CTA inside the drawer, hide the one outside */
+  .desktop-cta {
+    display: none;
+  }
+  .mobile-cta {
+    display: block;
+    margin-top: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

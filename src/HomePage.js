@@ -122,11 +122,16 @@ export default function SlaveryAbolitionPage() {
               className="registry-image"
             />
 
-            <img
-              src="images/registry_2.jpg"
-              alt="An old book that is open from the top."
-              className="registry-image"
-            />
+           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <img
+                src="images/registry_2.jpg"
+                alt="An old book that is open from the top."
+                className="registry-image"
+              />
+              <p>
+                <i>Three views of [shelf mark].</i>
+              </p>
+            </div>
 
             <img
               src="images/registry_3.jpg"
