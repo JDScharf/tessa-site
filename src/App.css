@@ -42,7 +42,6 @@
 
 /* Navigation */
 .navbar {
-  padding-top: 3%;
   background-color: #4a5759;
   color: #f7e1d7;
 }
@@ -54,8 +53,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 3rem;  /* changed from height to min-height */
-  flex-wrap: wrap;   /* allows drawer to wrap below */
+  min-height: 3rem; /* changed from height to min-height */
+  flex-wrap: wrap; /* allows drawer to wrap below */
 }
 
 .nav-links {
@@ -80,6 +79,10 @@
   border-radius: 9999px;
   border: none;
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .cta-button:hover {
@@ -91,6 +94,8 @@
   background-color: #e5e7eb;
   padding: 3rem 0;
 }
+
+/* Home Page */
 
 .registry-section {
   background-color: #b0c4b1;
@@ -144,7 +149,8 @@
 }
 
 .home-top-text,
-.home-bottom-text, .left-text {
+.home-bottom-text,
+.left-text {
   text-align: left;
   align-self: center;
 }
@@ -161,6 +167,42 @@
 .map-svg {
   width: 100%;
   height: auto;
+}
+
+/* Overview Page */
+.dataviz {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#viz-breakdowns {
+  margin-top: 20px;
+}
+
+.spacer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#crop-button {
+  background-color: #edafb8;
+  color: #0d1b2a;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  min-width: 80px;
+  height: 32px; /* control the height directly */
+  line-height: 1; /* prevent line height from inflating it */
+  appearance: none; /* remove browser default select styling */
+  -webkit-appearance: none;
 }
 
 /* Footer */
@@ -228,11 +270,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .content-grid, .registry-grid {
+  .content-grid,
+  .registry-grid {
     grid-template-columns: 1fr;
   }
-
-
 
   .home-bottom-text {
     order: 3;
@@ -247,6 +288,10 @@
     gap: 1rem;
   }
 
+  .navbar {
+    padding-top: 2%;
+  }
+
   .main-title {
     font-size: 2rem;
   }
@@ -257,6 +302,11 @@
 
   .home-title-div {
     background-color: #b0c4b1;
+  }
+
+  /* Overview Page */
+  .spacer-flex {
+    padding-bottom: 20px;
   }
 }
 
@@ -332,15 +382,14 @@ nav a {
   font-style: normal;
 }
 
-button {
+/* button {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-}
+} */
 
 /* ── Desktop: links laid out in a row ─────────────────────── */
-
 
 .nav-link {
   text-decoration: none;
@@ -367,7 +416,7 @@ button {
   cursor: pointer;
   padding: 0;
   z-index: 101;
-  color: #edafb8; 
+  color: #edafb8;
 }
 
 .hamburger-line {
@@ -398,7 +447,7 @@ button {
     display: flex;
   }
 
- /* Let the navbar stack vertically so the drawer can sit below */
+  /* Let the navbar stack vertically so the drawer can sit below */
   .nav-content {
     flex-wrap: wrap;
   }

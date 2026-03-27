@@ -1,4 +1,4 @@
-export default function SlaveryAbolitionPage() {
+function HomePage() {
   return (
     <div className="page-container">
       {/* Hero Section */}
@@ -120,7 +120,13 @@ export default function SlaveryAbolitionPage() {
               className="registry-image"
             />
 
-           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.5rem",
+              }}
+            >
               <img
                 src="images/registry_2.jpg"
                 alt="An old book that is open from the top."
@@ -169,3 +175,5 @@ export default function SlaveryAbolitionPage() {
     </div>
   );
 }
+
+export default HomePage;
