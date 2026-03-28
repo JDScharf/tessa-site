@@ -1,3 +1,11 @@
+/* Colors */
+:root {
+  --color-primary: #edafb8;
+  --color-secondary: #f7e1d7;
+  --color-text: #333333;
+  --color-background: #b0c4b1;
+}
+
 .App {
   text-align: center;
 }
@@ -15,6 +23,16 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/* Spinning loading screen */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes App-logo-spin {
@@ -36,8 +54,6 @@
 
 .page-container {
   min-height: 100vh;
-  /* background-color: #f9fafb; */
-  background-color: #e5e7eb;
 }
 
 /* Navigation */
@@ -73,7 +89,7 @@
 }
 
 .cta-button {
-  background-color: #edafb8;
+  background-color: var(--color-primary);
   color: #0d1b2a;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
@@ -98,14 +114,18 @@
 /* Home Page */
 
 .registry-section {
-  background-color: #b0c4b1;
+  background-color: var(--color-background);
   padding: 1rem 1rem 2rem 1rem;
 }
 
 .container {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.container-plantation {
+  margin: 0 auto;
+  padding: 0;
 }
 
 .content-grid {
@@ -155,6 +175,14 @@
   align-self: center;
 }
 
+.text-below-viz {
+  max-width: 1000px;
+  text-align: left;
+  align-self: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
 .centered-text .text-content {
   max-width: 56rem;
   margin: 0 auto;
@@ -180,15 +208,8 @@
   margin-top: 20px;
 }
 
-.spacer-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 #crop-button {
-  background-color: #edafb8;
+  background-color: var(--color-primary);
   color: #0d1b2a;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
@@ -203,6 +224,42 @@
   line-height: 1; /* prevent line height from inflating it */
   appearance: none; /* remove browser default select styling */
   -webkit-appearance: none;
+}
+
+/* Plantation Page */
+#plantation-selector {
+  /* border: 2px solid var(--color-background); */
+  background-color: var(--color-background);
+  border-radius: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: fit-content;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+#metric-card {
+  border: 2px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  max-width: 300px;
+  font-family: Montserrat, sans-serif;
+  margin: 50px;
+}
+
+#metric-card h3 {
+  font-size: 1rem;
+  color: #666;
+}
+
+#metric-card h2 {
+  font-size: 2rem;
+  margin: 0.25rem 0;
+}
+
+#metric-card p {
+  font-size: 0.85rem;
+  color: #444;
 }
 
 /* Footer */

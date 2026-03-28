@@ -1,5 +1,4 @@
 import TableauOverviewEmbed from "../components/TableauOverviewEmbed";
-import TableauCropSelector from "../components/TableauCropSelector";
 
 function Overview() {
   return (
@@ -13,12 +12,28 @@ function Overview() {
             {/* Tableau Viz */}
             <TableauOverviewEmbed />
           </div>
+          {/* text below */}
+          <div className="text-below-viz">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              condimentum auctor purus at malesuada. Cras vulputate purus augue,
+              vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet
+              lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum
+              quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum
+              vestibulum fringilla.
+            </p>
+            <br></br>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              condimentum auctor purus at malesuada. Cras vulputate purus augue,
+              vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet
+              lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum
+              quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum
+              vestibulum fringilla.
+            </p>
+          </div>
         </div>
       </section>
-
-      <TableauCropSelector />
-
-      {/* Third Section */}
     </div>
   );
 }

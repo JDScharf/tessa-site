@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import Overview from "./pages/Overview.jsx";
+import PlantationPage from "./pages/PlantationPage.jsx";
 import Footer from "./components/Footer.jsx";
 import "./App.css";
 
@@ -39,7 +40,11 @@ function App() {
               <NavLink to="/" className="nav-link" onClick={closeMenu}>
                 Geography
               </NavLink>
-              <NavLink to="/" className="nav-link" onClick={closeMenu}>
+              <NavLink
+                to="/plantation"
+                className="nav-link"
+                onClick={closeMenu}
+              >
                 Plantations
               </NavLink>
               {/* CTA button is included here so it appears inside the mobile menu too */}
@@ -56,6 +61,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/overview" element={<Overview />} />
+          <Route path="/plantation" element={<PlantationPage />} />
         </Routes>
         <Footer />
       </div>
