@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import Overview from "./pages/Overview.jsx";
+import Geography from "./pages/Geography.jsx";
 import PlantationPage from "./pages/PlantationPage.jsx";
 import Footer from "./components/Footer.jsx";
 import "./App.css";
@@ -37,7 +38,7 @@ function App() {
               <NavLink to="/overview" className="nav-link" onClick={closeMenu}>
                 Overview
               </NavLink>
-              <NavLink to="/" className="nav-link" onClick={closeMenu}>
+              <NavLink to="/geography" className="nav-link" onClick={closeMenu}>
                 Geography
               </NavLink>
               <NavLink
@@ -61,6 +62,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/overview" element={<Overview />} />
+          <Route path="/geography" element={<Geography />} />
           <Route path="/plantation" element={<PlantationPage />} />
         </Routes>
         <Footer />
