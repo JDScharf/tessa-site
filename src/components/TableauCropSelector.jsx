@@ -46,13 +46,12 @@ const cropInfo = {
   },
 };
 
-let cachedRows = null;
-
 function TableauCropSelector() {
-  const [allRows, setAllRows] = useState(cachedRows);
+  const [allRows, setAllRows] = useState(null);
   const [selectedCrop, setSelectedCrop] = useState("Sugar");
   const vizRef = useRef(null);
   const [metricData, setMetricData] = useState(null);
+  const [vizReady, setVizready] = useState(false);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -66,62 +65,56 @@ function TableauCropSelector() {
   useEffect(() => {
     const viz = vizRef.current;
     if (viz) {
-      viz.addEventListener("firstinteractive", async () => {
-        if (!viz) return;
-
-        if (cachedRows) {
-          setAllRows(cachedRows); // use cache immediately
-          return;
-        }
-
-        try {
-          const dashboard = viz.workbook.activeSheet;
-          console.log("worksheets are:");
-          console.log(dashboard.worksheets);
-          const cropSheet = dashboard.worksheets.find(
-            (ws) => ws.name === "Number of people, origin (2)",
-          );
-          const tableData = await cropSheet.getSummaryDataAsync();
-          cachedRows = tableData.data;
-          setAllRows(tableData.data);
-          console.log("Raw data:", tableData);
-          console.log("Cached data:", cachedRows);
-        } catch (err) {
-          console.log("Data fetch error:", err);
-        }
+      viz.addEventListener("firstinteractive", () => {
+        setVizready(true);
       });
     }
   }, []);
 
+  const fetchDataForCrop = async (crop) => {
+    const viz = vizRef.current;
+    if (!viz) return;
+
+    try {
+      const dashboard = viz.workbook.activeSheet;
+      const sheet = dashboard.worksheets.find(
+        (ws) => ws.name === "Number of people, origin (2)",
+      );
+
+      // Apply filter first, then wait to update
+      await sheet.applyFilterAsync("Crop", [crop], "replace");
+
+      // Small delay to let tableau re-aggregate after filtering
+      await new Promise((res) => setTimeout(res, 500));
+
+      const tableData = await sheet.getSummaryDataAsync();
+      const rows = tableData.data;
+
+      const total = rows.reduce((sum, row) => sum + (row[1]?._value || 0), 0);
+      const african = rows
+        .filter((row) => row[0]?._value === "African")
+        .reduce((sum, row) => sum + (row[1]?._value || 0), 0);
+      const creole = rows
+        .filter((row) => row[0]?._value === "Creole")
+        .reduce((sum, row) => sum + (row[1]?._value || 0), 0);
+
+      setMetricData({ total, african, creole });
+    } catch (err) {
+      console.log("Data fetch error:", err);
+    }
+  };
+
+  // Fetch on initial viz ready
   useEffect(() => {
-    if (!allRows) return;
-
-    const cropRows = allRows.filter((row) => row[0]?._value === selectedCrop);
-    const total = cropRows.reduce((sum, row) => sum + (row[2]?._value || 0), 0);
-    console.log("total is:");
-    console.log(total);
-    const african = cropRows
-      .filter((row) => row[1]?._value === "African")
-      .reduce((sum, row) => sum + (row[2]?._value || 0), 0);
-    const creole = cropRows
-      .filter((row) => row[1]?._value === "Creole")
-      .reduce((sum, row) => sum + (row[2]?._value || 0), 0);
-
-    setMetricData({ total, african, creole });
-  }, [selectedCrop, allRows]);
+    if (vizReady) {
+      fetchDataForCrop(selectedCrop);
+    }
+  }, [vizReady]);
 
   const handleCropChange = async (crop) => {
     setSelectedCrop(crop);
-    const viz = vizRef.current;
-
-    if (viz && viz.workbook?._workbookImpl) {
-      try {
-        const sheet = viz.workbook.activeSheet;
-        await sheet.applyFilterAsync("Crop", [crop], "replace");
-      } catch (err) {
-        console.log("Filter error:", err);
-      }
-    }
+    setMetricData(null); // show loading spinner while fetching
+    await fetchDataForCrop(crop);
   };
 
   return (
