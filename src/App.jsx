@@ -50,19 +50,19 @@ function App() {
                 Plantations
               </NavLink>
               {/* CTA button is included here so it appears inside the mobile menu too */}
-              <button
+              <NavLink
                 to="/contact"
                 className="cta-button mobile-cta"
                 onClick={closeMenu}
               >
                 Get in Touch
-              </button>
+              </NavLink>
             </div>
 
             {/* CTA button — only visible on desktop via CSS */}
-            <button to="/contact" className="cta-button desktop-cta">
+            <NavLink to="/contact" className="cta-button desktop-cta">
               Get in Touch
-            </button>
+            </NavLink>
           </div>
         </nav>
 
