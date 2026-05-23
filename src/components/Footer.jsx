@@ -4,38 +4,35 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <span className="footer-text">Brought To You By</span>
-            <div className="logo-circle">
-              <svg viewBox="0 0 50 50" className="logo-svg">
-                <circle
-                  cx="25"
-                  cy="25"
-                  r="20"
-                  fill="none"
-                  stroke="#333"
-                  strokeWidth="2"
-                  strokeDasharray="3,2"
-                />
-                <text
-                  x="25"
-                  y="30"
-                  textAnchor="middle"
-                  fontSize="10"
-                  fill="#333"
-                  fontWeight="bold"
-                >
-                  UWI
-                </text>
-              </svg>
+            <span className="footer-text">Made possible with support from</span>
+            <div className="logo-images">
+              <a
+                className="footer-a-tag"
+                href="https://www.mellon.org/article/new-directions-fellowships"
+              >
+                <img
+                  className="footer-img"
+                  src="../images/MellonFoundationWordmark_White.png"
+                  alt=""
+                ></img>
+              </a>
+
+              <a className="footer-a-tag" href="https://www.maxwell.syr.edu/">
+                <img
+                  className="footer-img"
+                  src="../images/syr_maxwell_small_1c-reverse_rgb.png"
+                  alt=""
+                ></img>
+              </a>
             </div>
           </div>
           <div className="footer-social">
-            <span className="footer-text">Follow Our Work</span>
-            <a href="index.html" className="social-icon">
-              <svg viewBox="0 0 24 24" fill="#333">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </a>
+            <span className="footer-text">
+              Crafted by{" "}
+              <a className="footer-link" href="https://cnydataventures.com/">
+                CNY Data Ventures
+              </a>
+            </span>
           </div>
         </div>
       </div>

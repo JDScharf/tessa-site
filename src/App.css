@@ -341,8 +341,10 @@
 
 .footer-brand {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 1rem;
+  flex: 0 0 40%;
 }
 
 .footer-social {
@@ -352,10 +354,11 @@
 }
 
 .footer-text {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  text-align: left;
 }
 
-.logo-circle {
+/* .logo-circle {
   width: 3rem;
   height: 3rem;
   background-color: white;
@@ -363,30 +366,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.logo-svg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.social-icon {
-  display: inline-flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: white;
-  border-radius: 50%;
+.logo-images {
+  /* width: 250px; */
+  /* height: 250px; */
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.social-icon:hover {
-  background-color: #e5e7eb;
+.footer-a-tag {
+  width: 50%;
 }
 
-.social-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.footer-img {
+  width: 100%;
+  height: auto;
 }
 
 /* Responsive */
@@ -436,14 +432,24 @@
   #plantation-selector {
     border-radius: 0px;
   }
+
+  /* Footer */
+  .footer-content,
+  .footer-brand,
+  .logo-images,
+  .footer-social {
+    display: block;
+  }
+
+  .footer-social {
+    margin-top: 15%;
+  }
 }
 
 /* Fonts */
 
 .main-title {
   font-size: 4rem;
-  /* font-family: Georgia, serif;
-  font-style: italic; */
   font-family: "Charm", cursive;
   font-weight: 500;
   font-style: normal;
@@ -463,12 +469,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
-/* h1 {
-  font-family: "Charm", cursive;
-  font-weight: 700;
-  font-style: normal;
-} */
 
 h2 {
   font-size: 3rem;
@@ -521,6 +521,11 @@ nav a {
 
 .contact-links {
   color: #2b5786;
+}
+
+.footer-link {
+  color: #edafb8;
+  text-decoration: none;
 }
 
 /* ── Desktop: links laid out in a row ─────────────────────── */
