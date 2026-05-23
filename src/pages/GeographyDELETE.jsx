@@ -1,4 +1,4 @@
-import TableauGeographyEmbed from "../components/TableauGeographyEmbed";
+import BritishCaribbeanMap from "../components/BritishCaribbeanMap";
 
 function Geography() {
   return (
@@ -8,11 +8,9 @@ function Geography() {
         <div className="container">
           <h1 className="main-title">Geography</h1>
 
-          <div className="dataviz">
-            {/* Tableau Viz */}
-            <TableauGeographyEmbed />
-          </div>
+          <div className="dataviz">{/* ArcGIS Map */}</div>
           {/* text below */}
+          <BritishCaribbeanMap />
           <div className="text-below-viz">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean

@@ -47,7 +47,7 @@ const cropInfo = {
 };
 
 function TableauCropSelector() {
-  const [allRows, setAllRows] = useState(null);
+  // const [allRows, setAllRows] = useState(null);
   const [selectedCrop, setSelectedCrop] = useState("Sugar");
   const vizRef = useRef(null);
   const [metricData, setMetricData] = useState(null);
@@ -139,7 +139,7 @@ function TableauCropSelector() {
         {/* Third Section */}
         <div className="container">
           <div className="page-container">
-            <div className="content-grid">
+            <div className="plantation-grid">
               {/* Image Section */}
               <div className="home-top-text">
                 <img
@@ -154,7 +154,7 @@ function TableauCropSelector() {
               </div>
             </div>
 
-            <div className="content-grid">
+            <div className="plantation-grid">
               {/* Metric Card */}
               <div>
                 {metricData ? (
@@ -184,19 +184,20 @@ function TableauCropSelector() {
               </div>
 
               {/* Viz */}
-              <div style={{ overflow: "hidden", width: "100%" }}>
+              <div style={{ overflow: "hidden", width: "100%", margin: "0px" }}>
                 <div
                   style={{
                     transform: "scale(0.75)",
                     transformOrigin: "top left",
                     width: "133%",
+                    margin: "0px",
                   }}
                 >
                   <tableau-viz
                     ref={vizRef}
                     src="https://public.tableau.com/views/TMurphyExShcarf/DBbycroptype"
                     width="100%"
-                    height="750px"
+                    height="500px"
                     toolbar="hidden"
                   />
                 </div>

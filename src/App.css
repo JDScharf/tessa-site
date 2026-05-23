@@ -135,6 +135,12 @@
   margin-bottom: 2rem;
 }
 
+.plantation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
 .home-images {
   width: 100%;
   height: auto;
@@ -337,7 +343,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .content-grid,
-  .registry-grid {
+  .registry-grid,
+  .plantation-grid {
     grid-template-columns: 1fr;
   }
 
