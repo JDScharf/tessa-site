@@ -171,6 +171,10 @@ function TableauCropSelector() {
             </div>
 
             <div className="plantation-grid">
+              <div className="home-top-text">
+                <p>{cropInfo[selectedCrop].description2}</p>
+              </div>
+
               {/* Metric Card */}
               <div>
                 {metricData ? (
@@ -199,8 +203,8 @@ function TableauCropSelector() {
                 )}
               </div>
 
-              {/* Viz */}
-              <div style={{ overflow: "hidden", width: "100%", margin: "0px" }}>
+              {/* Viz - Currently Commented out.  UNCOMMENT NEXT SECTION TO SHOW */}
+              {/* <div style={{ overflow: "hidden", width: "100%", margin: "0px" }}>
                 <div
                   style={{
                     transform: "scale(0.75)",
@@ -217,12 +221,32 @@ function TableauCropSelector() {
                     toolbar="hidden"
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
 
-            {/* Left Column Text */}
-            <div className="home-bottom-text">
+            {/* IF RETURNING THE INTERACTIVE DASHBOARD, change the tableau-viz to be "width="100%", and height to be whatever height you want.  Move it to where the commented out dashboard is, and ten put the text to be in the seciton below.
+            For some reason the way that we are rendering the metric card, needs the dashboard data to be pulled for it to display also.*/}
+            {/* <div className="home-bottom-text">
               <p>{cropInfo[selectedCrop].description2}</p>
+            </div> */}
+
+            <div style={{ overflow: "hidden", width: "100%", margin: "0px" }}>
+              <div
+                style={{
+                  transform: "scale(0.75)",
+                  transformOrigin: "top left",
+                  width: "133%",
+                  margin: "0px",
+                }}
+              >
+                <tableau-viz
+                  ref={vizRef}
+                  src="https://public.tableau.com/views/TMurphyExShcarf/DBbycroptype"
+                  width="0px"
+                  height="0px"
+                  toolbar="hidden"
+                />
+              </div>
             </div>
           </div>
         </div>
