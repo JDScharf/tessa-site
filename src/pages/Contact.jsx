@@ -15,12 +15,11 @@ function ContactPage() {
             <div className="contact-text">
               <h2>Dr. Tessa Murphy</h2>
               <h3>
-                {" "}
                 <a
                   className="contact-links"
                   href="https://www.maxwell.syr.edu/directory/tessa-murphy"
                 >
-                  Maxwell faculty page link{" "}
+                  Associate Professor of History, Syracuse University
                 </a>
               </h3>
               <h3>
@@ -33,25 +32,34 @@ function ContactPage() {
           </div>
 
           <div className="citation-text">
-            <h2>How to cite this page</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              condimentum auctor purus at malesuada. Cras vulputate purus augue,
-              vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet
-              lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum
-              quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum
-              vestibulum fringilla.
-            </p>
-            <br></br>
-            <h2>Read publications about this</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              condimentum auctor purus at malesuada. Cras vulputate purus augue,
-              vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet
-              lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum
-              quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum
-              vestibulum fringilla.
-            </p>
+            <h2>Related Publications</h2>
+            <ul>
+              <li>
+                Murphy, Tessa. “
+                <a href="https://muse.jhu.edu/pub/275/article/925936/pdf">
+                  Centering Slavery in the Age of Abolition: Insights from the
+                  Saint Lucia Register of Plantation Slaves, 1815.
+                </a>
+                ”<i> William and Mary Quarterly</i>, 3d ser., 81, no. 2 (April
+                2024): 359–94.
+              </li>
+              <li>
+                Murphy, Tessa and Michael Fudge. "
+                <a href="https://doi.org/10.25971/r26a-gf45">
+                  Slavery in Saint Lucia: Insights from the Saint Lucia Register
+                  of Plantation Slaves, 1815.
+                </a>
+                " <i>Journal of Slavery and Data Preservation 5</i>, no. 2
+                (2024): 22-30.
+              </li>
+              <li>
+                Fudge, Michael; Murphy, Tessa, et al. "
+                <a href="https://doi.org/10.7910/DVN/HQFZGJ">
+                  Saint Lucia Register of Plantation Slaves, 1815 dataset
+                </a>
+                ", Harvard Dataverse (2024).
+              </li>
+            </ul>
           </div>
         </div>
       </section>

@@ -177,7 +177,7 @@
 }
 
 .text-content {
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -278,6 +278,10 @@
   color: #444;
 }
 
+#center-subtitle {
+  text-align: center;
+}
+
 /* Contact Page Styling */
 
 .contact-section {
@@ -312,6 +316,7 @@
 
 .contact-text {
   padding-right: 100px;
+  max-width: 40%;
 }
 
 .citation-text {
@@ -325,6 +330,20 @@
 .citation-text h2 {
   text-align: center;
 }
+
+/* Contact page bullets */
+/* ul {
+  list-style: none;
+  padding-left: 0;
+  color: #4a5759;
+}
+
+li::before {
+  content: "•";
+  color: #4a5759;
+  font-size: 1.5em;
+  margin-right: 8px;
+} */
 
 /* Footer */
 .footer {
@@ -383,67 +402,6 @@
 .footer-img {
   width: 100%;
   height: auto;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .content-grid,
-  .registry-grid,
-  .plantation-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-bottom-text {
-    order: 3;
-  }
-
-  .documents-grid {
-    grid-template-columns: 1fr;
-    display: grid;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .navbar {
-    padding-top: 2%;
-  }
-
-  .main-title {
-    font-size: 2rem;
-  }
-
-  .registry-section {
-    background-color: #e5e7eb;
-  }
-
-  .home-title-div {
-    background-color: #b0c4b1;
-  }
-
-  /* Overview Page */
-  .spacer-flex {
-    padding-bottom: 20px;
-  }
-
-  /* Plantation Page */
-
-  #plantation-selector {
-    border-radius: 0px;
-  }
-
-  /* Footer */
-  .footer-content,
-  .footer-brand,
-  .logo-images,
-  .footer-social {
-    display: block;
-  }
-
-  .footer-social {
-    margin-top: 15%;
-  }
 }
 
 /* Fonts */
@@ -508,6 +466,7 @@ p {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 1rem;
 }
 
 nav a {
@@ -581,6 +540,8 @@ nav a {
 }
 
 /* ── Mobile breakpoint ────────────────────────────────────── */
+
+/* Navigation */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -625,8 +586,68 @@ nav a {
     margin-right: auto;
   }
 
-  /* Contact Page Specific info */
+  /* Home Page */
+  .content-grid,
+  .registry-grid,
+  .plantation-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .home-bottom-text {
+    order: 3;
+  }
+
+  .documents-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .navbar {
+    padding-top: 2%;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .registry-section {
+    background-color: #e5e7eb;
+  }
+
+  .home-title-div {
+    background-color: #b0c4b1;
+  }
+
+  /* Overview Page */
+  .spacer-flex {
+    padding-bottom: 20px;
+  }
+
+  /* Plantation Page */
+
+  #plantation-selector {
+    border-radius: 0px;
+  }
+
+  /* Footer */
+  .footer-content,
+  .footer-brand,
+  .logo-images,
+  .footer-social {
+    display: block;
+  }
+
+  .footer-social {
+    margin-top: 15%;
+  }
+}
+
+/* Tablet Break Point */
+@media (max-width: 1170px) {
   .headshot-image {
     transform: scale(2);
     margin: 0 0 20% 0;
@@ -637,10 +658,11 @@ nav a {
     text-align: center;
     padding: 2%;
     height: fit-content;
-    margin: 25% -8% 25% -8%;
+    /* margin: 25% -8% 25% -8%; */
   }
 
   .contact-text {
     padding-right: 0px;
+    max-width: 90%;
   }
 }

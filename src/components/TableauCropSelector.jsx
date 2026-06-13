@@ -11,6 +11,10 @@ const cropInfo = {
     description2:
       "Second Sugar cane plantations Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum auctor purus at malesuada. Cras vulputate purus augue, vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum vestibulum fringilla.",
     imgPath: "plantation-sugar.jpg",
+    imgInfoLink:
+      "https://collections.britishart.yale.edu/catalog/alma:9961695553408651",
+    imgSubtitle:
+      "Richard Bridgens, “Planting the Sugar Cane,” West India Scenery: with Illustrations of Negro Character, the Process of Making Sugar, &c. From Sketches Taken During a Voyage To, and Residence of Seven Years In, the Island of Trinidad. London: Published for the proprietor by Robert Jennings & Co., 1836.",
   },
   Coffee: {
     label: "Coffee",
@@ -19,6 +23,9 @@ const cropInfo = {
     description2:
       "Second coffee plantations Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum auctor purus at malesuada. Cras vulputate purus augue, vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum vestibulum fringilla.",
     imgPath: "plantation-coffee.jpg",
+    imgInfoLink: "https://smarthistory.org/marc-ferrez-slaves-coffee-yard/",
+    imgSubtitle:
+      "Marc Ferrez, Slaves at a Coffee Yard in a Farm, Vale do Paraiba, Sao Paulo.",
   },
   Cotton: {
     label: "Cotton",
@@ -27,6 +34,9 @@ const cropInfo = {
     description2:
       "Second cotton plantations Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum auctor purus at malesuada. Cras vulputate purus augue, vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum vestibulum fringilla.",
     imgPath: "plantation-cotton.jpg",
+    imgInfoLink: "https://artgallery.yale.edu/collections/objects/44742",
+    imgSubtitle:
+      "James Richard Barfoot, “Progress of Cotton N. 1: Cotton Plantation” (1840).",
   },
   Cacao: {
     label: "Cacao",
@@ -35,6 +45,8 @@ const cropInfo = {
     description2:
       "Second cacao plantations Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum auctor purus at malesuada. Cras vulputate purus augue, vel volutpat mauris lobortis eu. Suspendisse ullamcorper laoreet lacinia. Suspendisse at dui a ante auctor fermentum ac condimentum quam. Nullam bibendum justo a efficitur feugiat. Donec vestibulum vestibulum fringilla.",
     imgPath: "plantation-cacao.jpg",
+    imgInfoLink: "",
+    imgSubtitle: "Detail from Ferdinand Hirts Geographische Bildertafeln,1886.",
   },
 };
 
@@ -134,7 +146,7 @@ function TableauCropSelector() {
           <div className="page-container">
             <div className="plantation-grid">
               {/* Image Section */}
-              <div className="home-top-text">
+              <div>
                 <img
                   className="plantation-images"
                   src={imageFolderpath + cropInfo[selectedCrop].imgPath}
@@ -144,6 +156,12 @@ function TableauCropSelector() {
                     "plantation."
                   }
                 ></img>
+                <a
+                  id="center-subtitle"
+                  href={cropInfo[selectedCrop].imgInfoLink}
+                >
+                  <i>{cropInfo[selectedCrop].imgSubtitle}</i>
+                </a>
               </div>
 
               {/* Right Column Text */}
