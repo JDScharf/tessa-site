@@ -181,7 +181,7 @@ function TableauCropSelector() {
                   <div id="metric-card">
                     <h3>
                       Total number of people enslaved on{" "}
-                      {selectedCrop.toLowerCase()} plantation.
+                      {selectedCrop.toLowerCase()} plantations.
                     </h3>
                     <h2>{metricData.total.toLocaleString()}</h2>
                     <p>Origins</p>
